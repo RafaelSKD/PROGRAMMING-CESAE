@@ -9,28 +9,28 @@ The exercises are organized by topic and language, using both **C#** and **Java*
 
 ### 🔹 ALG – Algorithm Construction (Beginner Level)
 - **Hours**: 25  
-- **Languages**: C# or Java  
+- **Languages**: Java  
 - **Focus**: Basic algorithm logic, control structures, variables, loops, conditionals, and functions  
 - **Module Code**: P1  
 - **Instructor**: Vítor Santos
 
 ### 🔹 PCE – Algorithm Construction (Advanced Level)
 - **Hours**: 50  
-- **Languages**: C# or Java  
+- **Languages**: Java  
 - **Focus**: Advanced algorithm challenges, recursion, arrays, file handling, and modularity  
 - **Module Code**: P2  
 - **Instructor**: Vítor Santos
 
 ### 🔹 POO – Object-Oriented Programming
 - **Hours**: 50  
-- **Languages**: C# (.NET) / Java (JPE)  
+- **Languages**: Java (JPE)  
 - **Focus**: OOP principles — classes, objects, inheritance, polymorphism, encapsulation, interfaces  
 - **Module Code**: P3  
 - **Instructor**: Vítor Santos
 
 ### 🔹 DPT – Design Patterns
 - **Hours**: 25  
-- **Language**: C# or Java  
+- **Language**: Java  
 - **Focus**: Common software design patterns such as Singleton, Factory, Strategy, Observer, etc.  
 - **Module Code**: P5  
 - **Instructor**: Vítor Santos
