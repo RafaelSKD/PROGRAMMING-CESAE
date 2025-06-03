@@ -6,5 +6,6 @@ package Enums;
 public enum TipoCombustivel {
     GASOLINA,   // Gasoline
     DIESEL,     // Diesel
-    GPL         // Liquefied Petroleum Gas (LPG)
+    GPL,        // Liquefied Petroleum Gas (LPG)
+    ELETRICO,   // Electric
 }
