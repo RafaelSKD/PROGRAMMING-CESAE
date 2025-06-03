@@ -7,14 +7,14 @@ The exercises are organized by topic and language, using both **C#** and **Java*
 
 ## 🗂️ Modules & Topics
 
-### 🔹 ALG – Algorithm Construction (Beginner Level)
+### 🔹 ALG – Algorithm Construction (Beginner Level) 19/20
 - **Hours**: 25  
 - **Languages**: Java  
 - **Focus**: Basic algorithm logic, control structures, variables, loops, conditionals, and functions  
 - **Module Code**: P1  
 - **Instructor**: Vítor Santos
 
-### 🔹 PCE – Algorithm Construction (Advanced Level)
+### 🔹 PCE – Algorithm Construction (Advanced Level) 19/20
 - **Hours**: 50  
 - **Languages**: Java  
 - **Focus**: Advanced algorithm challenges, recursion, arrays, file handling, and modularity  
