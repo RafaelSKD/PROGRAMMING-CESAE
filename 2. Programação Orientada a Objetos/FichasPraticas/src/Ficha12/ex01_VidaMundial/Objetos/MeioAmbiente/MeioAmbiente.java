@@ -21,21 +21,23 @@ public class MeioAmbiente {
         this.agua = agua;
     }
 
-    public boolean plantaBebe(int indexPlanta){
+    public boolean plantaBebe(int indexPlanta) throws InterruptedException {
         SerVivo planta = seresVivos.get(indexPlanta);
-
+        cleanConsole();
         if (planta instanceof Planta){
             if (((Planta) planta).getFamilia() == FamiliaPlantas.ARVORES){
                 if (this.agua >= 1){ // arvores bebem 1L
                     System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                     System.out.println("A Arvore " + planta.getNome() + " da especie " + planta.getEspecie() + "bebeu 1l de agua");
                     this.agua -= 1; // retira 1L de agua
-                    System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n");
+                    System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n\n\n\n\n");
+                    Thread.sleep(2000);
                     return true;
                 }
                 System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                 System.out.println("A Arvore " + planta.getNome() + " da especie " + planta.getEspecie() +
-                        "nao conseguiu beber agua\nMOTIVO: Agua insuficiente");
+                        "nao conseguiu beber agua\nMOTIVO: Agua insuficiente\n\n\n\n\n");
+                Thread.sleep(2000);
                 return false;
             }
             if (((Planta) planta).getFamilia() == FamiliaPlantas.FLORES){
@@ -43,12 +45,14 @@ public class MeioAmbiente {
                     System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                     System.out.println("A Flor " + planta.getNome() + " da especie " + planta.getEspecie() + "bebeu 0.1l de agua");
                     this.agua -= 0.1; // retira 0.1L de agua
-                    System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n");
+                    System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n\n\n\n\n\n");
+                    Thread.sleep(2000);
                     return true;
                 }
                 System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                 System.out.println("A Flor " + planta.getNome() + " da especie " + planta.getEspecie() +
-                        "nao conseguiu beber agua\nMOTIVO: Agua insuficiente");
+                        "nao conseguiu beber agua\nMOTIVO: Agua insuficiente\n\n\n\n\n");
+                Thread.sleep(2000);
                 return false;
             }
             if (((Planta) planta).getFamilia() == FamiliaPlantas.ERVAS){
@@ -56,12 +60,14 @@ public class MeioAmbiente {
                     System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                     System.out.println("A Erva " + planta.getNome() + " da especie " + planta.getEspecie() + "bebeu 0.25l de agua");
                     this.agua -= 0.25; // retira 0.25L de agua
-                    System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n");
+                    System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n\n\n\n\n");
+                    Thread.sleep(2000);
                     return true;
                 }
                 System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                 System.out.println("A Erva " + planta.getNome() + " da especie " + planta.getEspecie() +
-                        "nao conseguiu beber agua\nMOTIVO: Agua insuficiente");
+                        "nao conseguiu beber agua\nMOTIVO: Agua insuficiente\n\n\n\n\n");
+                Thread.sleep(2000);
                 return false;
             }
             if (((Planta) planta).getFamilia() == FamiliaPlantas.COMEINSETOS){
@@ -69,63 +75,79 @@ public class MeioAmbiente {
                     System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                     System.out.println("A Come Insetos " + planta.getNome() + " da especie " + planta.getEspecie() + "bebeu 0.15l de agua");
                     this.agua -= 0.15; // retira 0.15L de agua
-                    System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n");
+                    System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n\n\n\n\n");
+                    Thread.sleep(2000);
                     return true;
                 }
                 System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                 System.out.println("A Come Insetos " + planta.getNome() + " da especie " + planta.getEspecie() +
-                        "nao conseguiu beber agua\nMOTIVO: Agua insuficiente");
+                        "nao conseguiu beber agua\nMOTIVO: Agua insuficiente\n\n\n\n\n");
+                Thread.sleep(2000);
                 return false;
             }
+            return false;
         }
-        System.out.println("Erro - Ser vivo fornecido nao e uma planta");
+        System.out.println("Erro - Ser vivo fornecido nao e uma planta\n\n\n\n\n");
+        Thread.sleep(2000);
         return false;
     }
 
-    public boolean plantaComeInsetos(int indexPlanta){
+    public boolean plantaComeInsetos(int indexPlanta) throws InterruptedException {
         SerVivo planta = seresVivos.get(indexPlanta);
-
+        cleanConsole();
         if (planta instanceof Planta){
             if (((Planta) planta).getFamilia() == FamiliaPlantas.COMEINSETOS){
                 for (SerVivo serVivo : this.seresVivos){
                     if (serVivo instanceof Inseto){
                         System.out.println("a Planta ComeInsetos " + planta.getNome() + " da especie " +
                                 planta.getEspecie() + " comeu o inseto " + serVivo.getNome() +
-                                "da especie " + serVivo.getEspecie());
+                                "da especie " + serVivo.getEspecie() + "\n\n\n\n\n");
+                        Thread.sleep(2000);
                         seresVivos.remove(serVivo);
                         return true;
                     }
                 }
                 System.out.println("a Planta ComeInsetos " + planta.getNome() + " da especie " +
                         planta.getEspecie() + " nao conseguiu comer nenhum inseto\n" +
-                        "MOTIVO : Nao existem insetos disponiveis no meio ambiente");
+                        "MOTIVO : Nao existem insetos disponiveis no meio ambiente\n\n\n\n\n");
+                Thread.sleep(2000);
                 return false;
             }
-            System.out.println("A planta fornecida nao pertence a classe de Comedoras de Insetos");
+            System.out.println("A planta fornecida nao pertence a classe de Comedoras de Insetos\n\n\n\n\n");
+            Thread.sleep(2000);
             return false;
         }
-        System.out.println("O ser vivo fornecido nao e uma planta");
+        System.out.println("O ser vivo fornecido nao e uma planta\n\n\n\n\n");
+        Thread.sleep(2000);
         return false;
     }
 
-    public void plantaAbanaComVento(int indexPlanta){
-        System.out.println("Está muito vento");
+    public void plantaAbanaComVento(int indexPlanta) throws InterruptedException {
+        cleanConsole();
+        System.out.println("Está muito vento\n\n\n\n\n");
+        Thread.sleep(2000);
     }
 
-    public void animalfazBarulho(int indexAnimal){
+    public void animalfazBarulho(int indexAnimal) throws InterruptedException {
         SerVivo animal = seresVivos.get(indexAnimal);
         if (animal instanceof Animal) {
+            cleanConsole();
             System.out.println(((Animal) animal).getBarulho());
+            System.out.println("\n\n\n\n\n");
+            Thread.sleep(2000);
         }
     }
 
-    public void animalMovimenta(int indexAnimal){
+    public void animalMovimenta(int indexAnimal) throws InterruptedException {
+        cleanConsole();
         SerVivo animal = seresVivos.get(indexAnimal);
-        System.out.println("O " + animal.getNome() + " movimentou-se");
+        System.out.println("O " + animal.getNome() + " movimentou-se\n\n\n\n\n");
+        Thread.sleep(2000);
     }
 
-    public boolean animalBebe(int indexAnimal){
+    public boolean animalBebe(int indexAnimal) throws InterruptedException {
         SerVivo animal = seresVivos.get(indexAnimal);
+        cleanConsole();
         double agua = 0;
         if (animal instanceof Animal) {
             agua = (((Animal) animal).getPeso()) * 0.025; // bebe 0.025L por cada kg de peso
@@ -133,20 +155,24 @@ public class MeioAmbiente {
                 System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
                 System.out.println("O animal " + animal.getNome() + " da especie " + animal.getEspecie() + "bebeu " + agua + "L de agua");
                 this.agua -= agua; // retira agua bebida
-                System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n");
+                System.out.println("Agua disponivel no Meio Ambiente apos ser bebida: " + this.agua + "L\n\n\n\n\n");
+                Thread.sleep(2000);
                 return true;
             }
             System.out.println("Agua disponivel no Meio Ambiente: " + this.agua + "L\n");
             System.out.println("O Animal " + animal.getNome() + " da especie " + animal.getEspecie() +
-                    "nao conseguiu beber agua\nMOTIVO: Agua insuficiente");
+                    "nao conseguiu beber agua\nMOTIVO: Agua insuficiente\n\n\n\n\n");
+            Thread.sleep(2000);
             return false;
         }
-        System.out.println("O ser vivo fornecido nao e da classe Animal");
+        System.out.println("O ser vivo fornecido nao e da classe Animal\n\n\n\n\n");
+        Thread.sleep(2000);
         return false;
     }
 
-    public boolean animalCome(int indexAnimal){
+    public boolean animalCome(int indexAnimal) throws InterruptedException {
         SerVivo animal = seresVivos.get(indexAnimal);
+        cleanConsole();
         if (animal instanceof Animal) {
             boolean fome = (((Animal) animal).isFome());
             if (fome) {
@@ -156,19 +182,21 @@ public class MeioAmbiente {
                             if (!((Inseto) serVivo).isVenenoso()){
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " comeu o inseto " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie());
+                                        "da especie " + serVivo.getEspecie() + "\n\n\n\n\n");
                                 seresVivos.remove(serVivo);
                                 ((Animal) animal).setFome(false);
+                                Thread.sleep(2000);
                                 return true;
                             }
                             else{
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " comeu o inseto " + serVivo.getNome() +
                                         "da especie " + serVivo.getEspecie() + "\nATENCAO : O inseto e venenoso\n" +
-                                        "O " + animal.getNome() + " MORREU! ");
+                                        "O " + animal.getNome() + " MORREU! \n\n\n\n\n");
                                 seresVivos.remove(serVivo);
                                 this.ultimoVivo = animal;
                                 seresVivos.remove(animal);
+                                Thread.sleep(2000);
                                 return false;
                             }
                         }
@@ -176,22 +204,25 @@ public class MeioAmbiente {
                             if (comerAnimal(animal, serVivo)){
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " comeu o animal " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie());
+                                        "da especie " + serVivo.getEspecie() + "\n\n\n\n\n");
                                 this.ultimoVivo = serVivo;
                                 seresVivos.remove(serVivo);
+                                Thread.sleep(2000);
                                 return true;
                             }
                             else{
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " nao conseguiu comer o animal " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie() + "\nMOTIVO : O animal tem um grau de defesa superior ao ataque do animal");
+                                        "da especie " + serVivo.getEspecie() + "\nMOTIVO : O animal tem um grau de defesa superior ao ataque do animal\n\n\n\n\n");
                                 ((Animal) animal).setFome(true);
+                                Thread.sleep(2000);
                                 return false;
                             }
                         }
                     }
                     System.out.println("O animal " + animal.getNome() + " da especie " + animal.getEspecie() +
-                            " nao conseguiu comer nenhum inseto ou animal\nMOTIVO : Nao existem insetos ou animais disponiveis no meio ambiente");
+                            " nao conseguiu comer nenhum inseto ou animal\nMOTIVO : Nao existem insetos ou animais disponiveis no meio ambiente\n\n\n\n\n");
+                    Thread.sleep(2000);
                 }
                 if ((((Animal) animal).getDieta()) == DietaAnimal.HERBIVORO) {
                     for (SerVivo serVivo : this.seresVivos) {
@@ -199,19 +230,25 @@ public class MeioAmbiente {
                             if (comerPlanta(animal, serVivo)){
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " comeu a planta " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie());
+                                        "da especie " + serVivo.getEspecie() + "\n\n\n\n\n");
                                 seresVivos.remove(serVivo);
                                 ((Animal) animal).setFome(false);
+                                Thread.sleep(2000);
                                 return true;
                             }
-                            else
+                            else{
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " nao conseguiu comer a planta " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie() + "\nMOTIVO : A planta tem um grau de defesa superior a inteligencia do animal");
+                                        "da especie " + serVivo.getEspecie() + "\nMOTIVO : A planta tem um grau de defesa superior a inteligencia do animal\n\n\n\n\n");
+                                Thread.sleep(2000);
+                                return false;
+                            }
                         }
                     }
                     System.out.println("O animal " + animal.getNome() + " da especie " + animal.getEspecie() +
-                            " nao conseguiu comer nenhuma planta\nMOTIVO : Nao existem plantas disponiveis no meio ambiente");
+                            " nao conseguiu comer nenhuma planta\nMOTIVO : Nao existem plantas disponiveis no meio ambiente\n\n\n\n\n");
+                    Thread.sleep(2000);
+                    return false;
                 }
                 if ((((Animal) animal).getDieta()) == DietaAnimal.OMNIVORO) {
                     for (SerVivo serVivo : this.seresVivos) {
@@ -219,30 +256,36 @@ public class MeioAmbiente {
                             if (comerPlanta(animal, serVivo)){
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " comeu a planta " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie());
+                                        "da especie " + serVivo.getEspecie() + "\n\n\n\n\n");
                                 seresVivos.remove(serVivo);
                                 ((Animal) animal).setFome(false);
+                                Thread.sleep(2000);
                                 return true;
                             }
-                            else
+                            else{
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " nao conseguiu comer a planta " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie() + "\nMOTIVO : A planta tem um grau de defesa superior a inteligencia do animal");
+                                        "da especie " + serVivo.getEspecie() + "\nMOTIVO : A planta tem um grau de defesa superior a inteligencia do animal\n\n\n\n\n");
+                                Thread.sleep(2000);
+                                return false;
+                            }
                         }
                         if (serVivo instanceof Animal && serVivo != animal) {  // evitar que o animal coma a si mesmo
                             if (comerAnimal(animal, serVivo)){
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " comeu o animal " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie());
+                                        "da especie " + serVivo.getEspecie() + "\n\n\n\n\n");
                                 this.ultimoVivo = serVivo;
                                 seresVivos.remove(serVivo);
+                                Thread.sleep(2000);
                                 return true;
                             }
                             else{
                                 System.out.println("O animal " + animal.getNome() + " da especie " +
                                         animal.getEspecie() + " nao conseguiu comer o animal " + serVivo.getNome() +
-                                        "da especie " + serVivo.getEspecie() + "\nMOTIVO : O animal tem um grau de defesa superior ao ataque do animal");
+                                        "da especie " + serVivo.getEspecie() + "\nMOTIVO : O animal tem um grau de defesa superior ao ataque do animal\n\n\n\n\n");
                                 ((Animal) animal).setFome(true);
+                                Thread.sleep(2000);
                                 return false;
                             }
                         }
@@ -250,11 +293,13 @@ public class MeioAmbiente {
                 }
 
             } else
-                System.out.println("O animal " + animal.getNome() + " da especie " + animal.getEspecie() + " esta de barriga cheia!");
+                System.out.println("O animal " + animal.getNome() + " da especie " + animal.getEspecie() + " esta de barriga cheia!\n\n\n\n\n");
             ((Animal) animal).setFome(true);
+            Thread.sleep(2000);
             return false;
         }
-        System.out.println("O ser vivo fornecido nao e da classe Animal");
+        System.out.println("O ser vivo fornecido nao e da classe Animal\n\n\n\n\n");
+        Thread.sleep(2000);
         return false;
     }
 
@@ -277,15 +322,17 @@ public class MeioAmbiente {
         return false;
     }
 
-    public void insetoChateia(){
+    public void insetoChateia() throws InterruptedException {
         Random rd = new Random();
+        cleanConsole();
         int ramdom = rd.nextInt(3);
         if (ramdom == 0)
-            System.out.println("Bzzzz bzzzz");
+            System.out.println("Bzzzz bzzzz\n\n\n\n\n");
         if (ramdom == 1)
-            System.out.println("Tic tic tic tic");
+            System.out.println("Tic tic tic tic\n\n\n\n\n");
         if (ramdom == 2)
-            System.out.println("Pssssssss");
+            System.out.println("Pssssssss\n\n\n\n\n");
+        Thread.sleep(2000);
     }
 
     public void addSerVivo(SerVivo novo){
@@ -303,32 +350,42 @@ public class MeioAmbiente {
         return rd.nextInt(quantidade) + 1;
     }
 
-    private int randomSerVivo(String tipoSerVivo){
-        SerVivo ser = null;
-        switch (tipoSerVivo){
-            case "Animal":
-                do{
-                    ser = seresVivos.get(acontecimento(this.seresVivos.size()-1));
-                }while (!(ser instanceof Animal));
-                break;
-            case "Planta":
-                do{
-                    ser = seresVivos.get(acontecimento(this.seresVivos.size()-1));
-                }while (!(ser instanceof Planta));
-                break;
-            case "Inseto":
-                do{
-                    ser = seresVivos.get(acontecimento(this.seresVivos.size()-1));
-                }while (!(ser instanceof Inseto));
-                break;
-            default:
-                System.out.println("Tipo de ser vivo invalido");
-                return -1;
+    private int randomSerVivo(String tipoSerVivo) throws InterruptedException {
+        ArrayList<SerVivo> filtrados = new ArrayList<>();
+
+        for (SerVivo ser : seresVivos) {
+            switch (tipoSerVivo) {
+                case "Animal":
+                    if (ser instanceof Animal) filtrados.add(ser);
+                    break;
+                case "Planta":
+                    if (ser instanceof Planta) filtrados.add(ser);
+                    break;
+                case "Inseto":
+                    if (ser instanceof Inseto) filtrados.add(ser);
+                    break;
+                default:
+                    System.out.println("Tipo de ser vivo invalido\n\n\n\n\n");
+                    Thread.sleep(2000);
+                    return -1;
+            }
         }
-        return this.seresVivos.indexOf(ser);
+
+        if (filtrados.isEmpty()) {
+            System.out.println("Nenhum ser do tipo '" + tipoSerVivo + "' disponível.\n\n\n\n\n");
+            Thread.sleep(2000);
+            return -1;
+        }
+
+        Random rd = new Random();
+        SerVivo escolhido = filtrados.get(rd.nextInt(filtrados.size()));
+        return seresVivos.indexOf(escolhido);
     }
 
-    private void acaoPlanta(int acao){
+    private void acaoPlanta(int acao) throws InterruptedException {
+        int index = randomSerVivo("Planta");
+        if (index == -1)
+            return;
         switch (acao){
             case 1: // Planta abana
                 plantaAbanaComVento(randomSerVivo("Planta"));
@@ -344,7 +401,10 @@ public class MeioAmbiente {
         }
     }
 
-    private void acaoAnimal(int acao){
+    private void acaoAnimal(int acao) throws InterruptedException {
+        int index = randomSerVivo("Animal");
+        if (index == -1)
+            return;
         switch (acao){
             case 1: // Animal faz barulho
                 animalfazBarulho(acontecimento(randomSerVivo("Animal")));
@@ -363,7 +423,7 @@ public class MeioAmbiente {
         }
     }
 
-    private void catastrofe(int acao) {
+    private void catastrofe(int acao) throws InterruptedException {
         switch (acao){
             case 1: //  Seca: Diminui a água para metade
                 this.agua /= 2;
@@ -375,11 +435,16 @@ public class MeioAmbiente {
                 thanos();
                 break;
             default:
-                System.out.println("Acao invalida para planta");
+                System.out.println("Acao invalida para catastrofe");
         }
     }
 
-    private void thanos() {
+    private void thanos() throws InterruptedException {
+        int indexPlanta = randomSerVivo("Planta");
+        int indexAnimal = randomSerVivo("Animal");
+        if (indexPlanta == -1 && indexAnimal == -1)
+            return;
+        cleanConsole();
         int animais = 0;
         int plantas = 0;
 
@@ -400,12 +465,37 @@ public class MeioAmbiente {
         while (plantas-- > 0)
             this.seresVivos.remove(randomSerVivo("Planta"));
         System.out.println("\nThanos estalou os dedos\n" +
-                "Metade da populacao de plantas e animais foi morta por uma Erupcao Vulcanica\n");
+                "Metade da populacao de plantas e animais foi morta por uma Erupcao Vulcanica\n\n\n\n\n");
+        System.out.println("                                               =:                               ");
+        System.out.println("                                       .@:    .@:                               ");
+        System.out.println("                                        .@+.  :@    .#@.                        ");
+        System.out.println("                                 ...     ...       =@:                         ");
+        System.out.println("                              -@#-.=@=.     ..==.. .                           ");
+        System.out.println("                           .@@: .   -@. .. +@-..=@:                            ");
+        System.out.println("                          :@.     .=@::@@##@@.   :@                            ");
+        System.out.println("                          :@    .+@-@@:.    =@   =@                            ");
+        System.out.println("                          .@+  .:%@:.       %*   @#                            ");
+        System.out.println("                           .@=@@-.      .+@*:    @=                            ");
+        System.out.println("                          .@%:.      .*@@@@-     .%%.                          ");
+        System.out.println("                         =@.      :%@+.   .@+.     :@.                         ");
+        System.out.println("                        .@.    .@@-         +@-    .@:                         ");
+        System.out.println("                        :@            .@@##@#:@.   .@:                         ");
+        System.out.println("                        :@        .-%@-..   :@*.   .@                          ");
+        System.out.println("                        :@      .@#:..       .=@.  @#                          ");
+        System.out.println("                        :@             .#@@.  .## .@.                          ");
+        System.out.println("                        .@.         .*@*...%@@@+. -@.                          ");
+        System.out.println("                         -@.                     -@.                           ");
+        System.out.println("                          .@%.                 .%%                             ");
+        System.out.println("                            .@#.              :@-                              ");
+        System.out.println("                              -@-.           +@.                               ");
+        Thread.sleep(2000);
     }
 
     public void simulador(int dias) throws InterruptedException {
         while (dias >= 0){ // roda os dias todos
+            dia.dia++;
             Thread.sleep(2000);
+            cleanConsole();
             System.out.println("Um novo dia comeca no " + this.nome + "\n");
             System.out.println("Animais vivos : \n");
             for (SerVivo serVivo : this.seresVivos){ // lista apenas nomes e especie para evitar demasiada info e mete todos os animais com fome
@@ -414,9 +504,8 @@ public class MeioAmbiente {
                     ((Animal) serVivo).setFome(true);
             }
             Thread.sleep(2000);
-            cleanConsole();
             int momentos = 3; // o dia esta dividido em três momentos (manhã, tarde e noite)
-            while (momentos >= 0){
+            while (momentos > 0){
                 int acao = acontecimento(4);
                 if (acao == 1){ //  Uma planta irá ter uma ação.
                     acaoPlanta(acontecimento(3));
@@ -431,57 +520,99 @@ public class MeioAmbiente {
                     catastrofe(acontecimento(3));
                 }
                 momentos--;
-                Thread.sleep(3000);
-                cleanConsole();
             }
             // final do dia
-            Thread.sleep(2000);
             cleanConsole();
-            System.out.println("Fim do dia\nAnimais com fome tentam comer!");
-            Thread.sleep(2000);
+            System.out.println("Fim do dia\nAnimais com fome tentam comer!\n\n");
+            Thread.sleep(1000);
             animaisComFomeTentamComer(dias);
-            Thread.sleep(2000);
             cleanConsole();
-            if (!this.seresVivos.isEmpty()){
-                System.out.println("Seres que sobreviveram a mais um dia:");
+            int animaisInsetosCounter = 0;
+            for (SerVivo serVivo : this.seresVivos){
+                if (serVivo instanceof Animal || serVivo instanceof Inseto)
+                    animaisInsetosCounter++;
+            }
+            if (animaisInsetosCounter > 0){
+                System.out.println("Seres que sobreviveram a mais um dia:\n");
                 for (SerVivo serVivo : this.seresVivos) // lista apenas nomes e especie para evitar demasiada info
                     System.out.println(serVivo.getNome() + " " + serVivo.getEspecie());
             }
             else{
                 cleanConsole();
-                Thread.sleep(2000);
-                System.out.println("MORRERAM TODOS!");
+                System.out.println(
+                        "                  _.-`''`-._\n" +
+                        "                ,`          `.    __________________________ \n" +
+                        "                | ,._-'''-.  |   |         MORRERAM         |\n" +
+                        "                | |,-.  ,-.| |   |          TODOS           |\n" +
+                        "                |/'  `-|  < |    |           !!!            |\n" +
+                        "                 \\    (_)   /    `------------------------'\n" +
+                        "                  \\  ____  /\n" +
+                        "                   \\ `--` /\n" +
+                        "            _.--`/'|`-..-'|\\''''`-.\n" +
+                        "         ,-'    /  |`._,' / \\      \\\n" +
+                        "        |      /   \\,/``\\/   \\    | \\\n" +
+                        "        |  |   '>   |\\,/|   <'   ,'  \\\n" +
+                        "        |  `/^)\\    |/`\\|    /   /    \\\n" +
+                        "       /   / /  \\   |   |   /   |      \\\n" +
+                        "      /   / ,``\\ \\  \\   /  /    |       \\\n" +
+                        "      '   |    |  \\  \\ /  /     |\\_      \\\n" +
+                        "     /   ,| _.'    \\ | | |__...-'` |      \\\n" +
+                        "    /   / `. |      |`````         |       \\\n" +
+                        "   |   /  ,`')      |              |\\       |\n" +
+                        "   |    ,` ,/\\      |            _,:''`,    |\n" +
+                        " ---\\,,.-'`---------|          _/  ,` , \\ ,'------------\n" +
+                        "                    |_.------''/ /; ,`  |/\n" +
+                        "                               `' ```'''");
                 Thread.sleep(2000);
                 System.out.println("Ultimo a morrer foi :");
                 this.ultimoVivo.exibirDetalhes();
+                System.out.println("\n\n\n\n\n");
+                Thread.sleep(2000);
+                return;
             }
             dias--;
         }
     }
 
     private void animaisComFomeTentamComer(int dias) throws InterruptedException {
-        ArrayList<Integer> Matadouro = new ArrayList<>();
-        System.out.println("Fim do dia " + (dias - 30));
-        System.out.println("Animais com fome tentam se alimentar um ultima vez hoje!");
-        for (int i = 0; i < this.seresVivos.size(); i++){
-            if (this.seresVivos.get(i) instanceof Animal){
-                if (((Animal) this.seresVivos.get(i)).isFome()){
-                    if ((!animalCome(this.seresVivos.indexOf(this.seresVivos.get(i))))){
-                        this.ultimoVivo = this.seresVivos.get(i);
-                        Matadouro.add(this.seresVivos.indexOf(this.seresVivos.get(i)));
-                        i--;
-                        System.out.println("Infelizmente ja passaram 24H e morreu a fome");
-                        Thread.sleep(2000);
+        ArrayList<SerVivo> mortos = new ArrayList<>();
+        cleanConsole();
+        System.out.println("Animais com fome tentam se alimentar uma última vez hoje!");
+
+        for (SerVivo ser : new ArrayList<>(seresVivos)) {
+            if (ser instanceof Animal) {
+                Animal animal = (Animal) ser;
+                if (animal.isFome()) {
+                    boolean conseguiuComer = animalCome(seresVivos.indexOf(ser));
+                    if (!conseguiuComer) {
+                        this.ultimoVivo = ser;
+                        mortos.add(ser);
+                        System.out.println(
+                                        "                 -|- \n" +
+                                        "              .-'~~~`-. \n" +
+                                        "            .'         `. \n" +
+                                        "            |  R  I  P  | \n" +
+                                        "            |           | \n" +
+                                        "          \\\\|           |// \n\n\n"
+                        );
+                        Thread.sleep(1500);
                     }
                 }
             }
         }
-        for (int i : Matadouro)
-            this.seresVivos.remove(i);
+
+        for (SerVivo morto : mortos) {
+            seresVivos.remove(morto);
+        }
     }
 
     public void cleanConsole(){
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("Dia atual: " + dia.dia + "\n\n");
+    }
+
+    public class dia {
+        public static int dia = 0;
     }
 
 }

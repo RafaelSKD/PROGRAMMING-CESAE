@@ -47,6 +47,17 @@ public class Main {
         Animal animal8 = new Animal("Tigre", "Panthera tigris", "Índia", 9, true, 220.0, 68.0, DietaAnimal.CARNIVORO, "Rugido");
         Animal animal9 = new Animal("Cachorro", "Canis lupus", "Alemanha", 4, true, 30.0, 60.0, DietaAnimal.OMNIVORO, "Latido");
         Animal animal10 = new Animal("Gato", "Felis catus", "Egito", 3, false, 4.0, 65.0, DietaAnimal.CARNIVORO, "Miado");
+        Animal animal11 = new Animal("Pinguim", "Aptenodytes forsteri", "Antártida", 6, false, 30.0, 50.0, DietaAnimal.CARNIVORO, "Graznido");
+        Animal animal12 = new Animal("Girafa", "Giraffa camelopardalis", "Namíbia", 12, false, 800.0, 40.0, DietaAnimal.HERBIVORO, "Mugido");
+        Animal animal13 = new Animal("Lobo", "Canis lupus", "Canadá", 7, true, 45.0, 65.0, DietaAnimal.CARNIVORO, "Uivo");
+        Animal animal14 = new Animal("Canguru", "Macropus", "Austrália", 9, false, 85.0, 70.0, DietaAnimal.HERBIVORO, "Grunhido");
+        Animal animal15 = new Animal("Tamanduá", "Myrmecophaga tridactyla", "Brasil", 5, false, 40.0, 45.0, DietaAnimal.CARNIVORO, "Fungado");
+        Animal animal16 = new Animal("Ornitorrinco", "Ornithorhynchus anatinus", "Austrália", 4, false, 2.5, 55.0, DietaAnimal.CARNIVORO, "Estalo");
+        Animal animal17 = new Animal("Águia", "Aquila chrysaetos", "EUA", 15, true, 6.0, 80.0, DietaAnimal.CARNIVORO, "Pio agudo");
+        Animal animal18 = new Animal("Bicho-preguiça", "Bradypus variegatus", "Brasil", 10, false, 4.0, 25.0, DietaAnimal.HERBIVORO, "Ronco");
+        Animal animal19 = new Animal("Rinoceronte", "Rhinoceros unicornis", "Índia", 20, false, 2300.0, 35.0, DietaAnimal.HERBIVORO, "Bufar");
+        Animal animal20 = new Animal("Corvo", "Corvus corax", "Reino Unido", 8, true, 1.2, 75.0, DietaAnimal.OMNIVORO, "Crocitar");
+
 
 // Adicionar tudo ao ambiente
         ambiente.addSerVivo(inseto1);
@@ -79,6 +90,17 @@ public class Main {
         ambiente.addSerVivo(animal8);
         ambiente.addSerVivo(animal9);
         ambiente.addSerVivo(animal10);
+        ambiente.addSerVivo(animal11);
+        ambiente.addSerVivo(animal12);
+        ambiente.addSerVivo(animal13);
+        ambiente.addSerVivo(animal14);
+        ambiente.addSerVivo(animal15);
+        ambiente.addSerVivo(animal16);
+        ambiente.addSerVivo(animal17);
+        ambiente.addSerVivo(animal18);
+        ambiente.addSerVivo(animal19);
+        ambiente.addSerVivo(animal20);
+
 
         ambiente.simulador(10);
     }
